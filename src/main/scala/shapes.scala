@@ -1,7 +1,11 @@
 package edu.luc.cs.laufer.cs371.shapes
 
-/** data Shape = Rectangle(w, h) | Location(x, y, Shape) */
+/** Defines the abstract shape hierarchy. */
 enum Shape derives CanEqual:
   case Rectangle(width: Int, height: Int)
+  case Ellipse(rx: Int, ry: Int)
   case Location(x: Int, y: Int, shape: Shape)
-  // TODO add missing cases (see test fixtures)
+  case Group(shapes: Shape*)
+end Shape
+
+
