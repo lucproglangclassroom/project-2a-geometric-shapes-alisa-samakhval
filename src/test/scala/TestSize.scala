@@ -5,6 +5,7 @@ import TestFixtures.*
 import Shape.*
 
 class TestSize extends AnyFunSuite:
+
   test("simple rectangle") {
     assert(size(simpleRectangle) == 1)
   }
@@ -14,14 +15,17 @@ class TestSize extends AnyFunSuite:
   }
 
   test("simple location") {
+    // wrapping does not add leaves
     assert(size(simpleLocation) == 1)
   }
 
   test("basic group") {
+    // Ellipse + Rectangle
     assert(size(basicGroup) == 2)
   }
 
   test("complex group") {
-    assert(size(complexGroup) == 6)
+    // five concrete leaves in the provided fixtures
+    assert(size(complexGroup) == 5)
   }
 end TestSize
